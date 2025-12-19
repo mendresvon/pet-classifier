@@ -12,11 +12,6 @@ license: mit
 
 # 🐾 AI Pet Species Classifier | 寵物物種辨識系統
 
-## 📸 Interface
-![App Screenshot](screenshot.jpg)
-
----
-
 ### 🚀 Live Demo
 
 Try the model here:
