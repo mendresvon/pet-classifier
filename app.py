@@ -1,7 +1,7 @@
 import gradio as gr
 from fastai.vision.all import *
 
-# Load the model
+# 1. Load the model
 learn = load_learner("pet_classifier_v1.pkl")
 
 label_map = {
@@ -21,52 +21,80 @@ def predict(img):
     return {label_map[c]: float(probs[i]) for i, c in enumerate(learn.dls.vocab)}
 
 
-# Custom CSS for the "Premium" feel
+# 2. Cyber-Neon High-Contrast CSS
 custom_css = """
-.gradio-container { background-color: #0c0c0e !important; }
+.gradio-container { background: radial-gradient(circle at top, #0f172a, #020617) !important; color: #f8fafc !important; }
+
+/* Header Styling */
 .header-box { 
-    text-align: center; 
-    padding: 30px; 
-    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 100%);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 30px;
+    text-align: center; padding: 60px 20px; border-radius: 24px;
+    background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px);
+    border: 1px solid rgba(34, 211, 238, 0.2); margin-bottom: 30px;
 }
-.student-name { color: #ffffff; font-size: 2.2em; font-weight: 700; margin-bottom: 5px; }
-.student-id { color: #d4d4d8; font-family: 'Courier New', monospace; letter-spacing: 2px; font-size: 1.1em; }
-.project-desc { color: #a1a1aa; max-width: 700px; margin: 20px auto; line-height: 1.6; font-size: 1.05em; }
+.student-name { 
+    color: #ffffff !important; font-size: 3.5em !important; font-weight: 900; 
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.6); display: block;
+}
+.student-id { color: #22d3ee !important; font-family: monospace; font-size: 1.4em; letter-spacing: 5px; }
+
+/* Project Info Section Styling */
+.info-section { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(34, 211, 238, 0.3); border-radius: 15px; padding: 25px; }
+.info-title { color: #22d3ee !important; font-size: 1.5em; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid rgba(34, 211, 238, 0.2); }
+.tech-list { list-style-type: square; margin-left: 20px; color: #cbd5e1; }
+.highlight { color: #d946ef !important; font-weight: bold; text-shadow: 0 0 8px rgba(217, 70, 239, 0.4); }
+b, strong { color: #ffffff !important; font-weight: 700; }
 """
 
-with gr.Blocks(
-    theme=gr.themes.Soft(primary_hue="zinc", neutral_hue="zinc"), css=custom_css
-) as demo:
+with gr.Blocks(css=custom_css) as demo:
 
-    # Premium Header Section
+    # Visual Header
     gr.HTML(
         f"""
         <div class="header-box">
-            <div class="student-name">馬盛中</div>
-            <div class="student-id">STUDENT ID: 4B1YZ001</div>
-            <div class="project-desc">
-                本計畫採用 <b>ResNet34</b> 深度學習架構，針對七種常見家庭寵物進行精準物種辨識。
-                透過遷移學習 (Transfer Learning) 技術，系統能夠在複雜背景下準確區分貓、狗、金魚、倉鼠、烏龜、鸚鵡及蛇類。
-                <br><br>
-                <i>This AI system utilizes ResNet34 to classify 7 pet species with high precision, 
-                showcasing the power of modern computer vision in domestic animal identification.</i>
-            </div>
+            <span class="student-name">馬盛中</span>
+            <span class="student-id">4B1YZ001</span>
         </div>
     """
     )
 
+    # Main Interaction Row
     with gr.Row():
-        with gr.Column(scale=1):
-            input_img = gr.Image(label="Upload Pet Image / 上傳照片", type="pil")
-            btn = gr.Button("Analyze Species / 開始辨識", variant="primary")
+        with gr.Column():
+            input_img = gr.Image(label="Input Image / 上傳照片", type="pil")
+            btn = gr.Button("⚡ INFER SPECIES / 開始辨識", variant="primary")
 
-        with gr.Column(scale=1):
+        with gr.Column():
             output_label = gr.Label(
-                label="Top Predictions / 辨識結果", num_top_classes=3
+                label="Top Classifications / 辨識結果", num_top_classes=3
             )
 
     btn.click(fn=predict, inputs=input_img, outputs=output_label)
 
-demo.launch()
+    # Project Description & Technical Info (Accordion for that clean feel)
+    with gr.Accordion("ℹ️ About this Project & Technical Info", open=True):
+        with gr.Row():
+            with gr.Column(elem_classes="info-section"):
+                gr.HTML(
+                    """
+                    <div class="info-title">Project Description</div>
+                    <p>This project showcases a Computer Vision model that correctly distinguishes between 7 common pet species. 
+                    The model was created by fine-tuning a <span class="highlight">ResNet34</span> architecture, achieving high accuracy through Transfer Learning. 
+                    This application is built with Python and deployed as an interactive web app for <b>STUST CSIE</b>.</p>
+                """
+                )
+            with gr.Column(elem_classes="info-section"):
+                gr.HTML(
+                    """
+                    <div class="info-title">Technical Details</div>
+                    <ul class="tech-list">
+                        <li><b>Project Type:</b> Image Classification</li>
+                        <li><b>Architecture:</b> ResNet34 (Fine-Tuned)</li>
+                        <li><b>Core Framework:</b> PyTorch & fastai</li>
+                        <li><b>Interface:</b> Gradio UI</li>
+                        <li><b>Developer:</b> 馬盛中 (4B1YZ001)</li>
+                    </ul>
+                """
+                )
+
+# Launch settings for Gradio 6.0 and HF Spaces
+demo.launch(ssr_mode=False)
