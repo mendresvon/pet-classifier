@@ -1,3 +1,19 @@
+# 🐾 AI Pet Species Classifier
+
+## 📸 Interface
+![App Screenshot](screenshot.png)
+
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/YOUR_HF_USERNAME/pet-classifier)
+
+**Student:** 馬盛中 (Ma Sheng-Zhong) | **ID:** 4B1YZ001  
+**University:** Southern Taiwan University of Science and Technology (STUST)
+
+---
+
+## 🚀 Live Demo
+Try the model here: [Hugging Face Space Link](https://huggingface.co/spaces/YOUR_HF_USERNAME/pet-classifier)
+
+## 📄 Project Description
 ---
 title: AI Pet Species Classifier
 emoji: 🐾

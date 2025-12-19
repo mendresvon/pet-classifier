@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Model files (Optional: if you want to force users to download from releases instead)
+# *.pkl 
+
+# OS specific
+.DS_Store
