@@ -1,5 +1,16 @@
-# 🐾 AI Pet Species Classifier
+---
+title: AI Pet Species Classifier
+emoji: 🐾
+colorFrom: gray
+colorTo: blue
+sdk: gradio
+python_version: 3.12
+app_file: app.py
+pinned: false
+license: mit
+---
 
+# 🐾 AI Pet Species Classifier | 寵物物種辨識系統
 ## 📸 Interface
 ![App Screenshot](screenshot.png)
 
@@ -14,19 +25,6 @@
 Try the model here: [Hugging Face Space Link](https://huggingface.co/spaces/YOUR_HF_USERNAME/pet-classifier)
 
 ## 📄 Project Description
----
-title: AI Pet Species Classifier
-emoji: 🐾
-colorFrom: gray
-colorTo: blue
-sdk: gradio
-python_version: 3.12
-app_file: app.py
-pinned: false
-license: mit
----
-
-# 🐾 AI Pet Species Classifier | 寵物物種辨識系統
 
 ### 👤 Developer Information
 
