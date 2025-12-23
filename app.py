@@ -145,7 +145,7 @@ with gr.Blocks(css=custom_css) as demo:
                         This deep learning application distinguishes between 7 pet species. Rather than building a CNN from scratch, we leveraged <b>transfer learning</b> by <b>fine-tuning</b> a pre-trained <span class="highlight">ResNet34</span> architecture.
                     </p>
                     <p>
-                        Before training, the baseline accuracy was <b>~77%</b>. After applying <b>data augmentation</b> and retraining, we achieved <b>98%</b> accuracy on the validation set.
+                        Before training, the baseline accuracy was <b>~76%</b>. After applying <b>data augmentation</b> and retraining, we achieved <b>98%</b> accuracy on the validation set.
                     </p>
 
                     <div class="divider"></div>
@@ -154,7 +154,7 @@ with gr.Blocks(css=custom_css) as demo:
                         本深度學習應用程式可辨識 7 種常見寵物。我們利用<b>遷移學習 (Transfer Learning)</b> 技術，對預訓練的 <span class="highlight">ResNet34</span> 架構進行<b>微調 (Fine-tuning)</b>。
                     </p>
                     <p>
-                        基準模型準確率約為 <b>77%</b>。透過<b>資料增強 (Data Augmentation)</b> 及再訓練，最終在驗證集上達到 <b>98%</b> 的高準確率。
+                        基準模型準確率約為 <b>76%</b>。透過<b>資料增強 (Data Augmentation)</b> 及再訓練，最終在驗證集上達到 <b>98%</b> 的高準確率。
                     </p>
                 """
                 )
@@ -166,7 +166,7 @@ with gr.Blocks(css=custom_css) as demo:
                     <ul>
                         <li><b>Architecture:</b> ResNet34 CNN</li>
                         <li><b>Technique:</b> Transfer Learning (Fine-Tuning)</li>
-                        <li><b>Base Accuracy:</b> ~77% (Pre-training)</li>
+                        <li><b>Base Accuracy:</b> ~76% (Pre-training)</li>
                         <li><b>Final Accuracy:</b> 98% (Post-training)</li>
                         <li><b>Framework:</b> PyTorch & fastai</li>
                         <li><b>ID:</b> 馬盛中 (4B1YZ001)</li>
