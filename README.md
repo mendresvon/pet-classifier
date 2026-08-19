@@ -44,8 +44,8 @@ license: mit
 
 ### 👨‍💻 Developer
 
-**馬盛中 (Ma Sheng-Zhong)** • `4B1YZ001`  
-*Computer Science & Information Engineering*  
+**馬盛中 (Ma Sheng-Zhong)** • `4B1YZ001`
+*Computer Science & Information Engineering*
 Southern Taiwan University of Science and Technology (STUST)
 
 </div>
@@ -95,16 +95,16 @@ The application features a **bilingual (English/Traditional Chinese)** Gradio in
 ## Key features
 
 ### Machine learning
-- **Transfer Learning**: Fine-tuned ResNet34 pre-trained on ImageNet
-- **98% Validation Accuracy**: Optimized through data augmentation and hyperparameter tuning
-- **Training data**: Diverse animal image dataset (90-species subset)
-- **Inference model**: Exported as an optimized `.pkl` file
+- Transfer Learning: Fine-tuned ResNet34 pre-trained on ImageNet
+- 98% Validation Accuracy: Optimized through data augmentation and hyperparameter tuning
+- Training data: Diverse animal image dataset (90-species subset)
+- Inference model: Exported as an optimized `.pkl` file
 
 ### Technical details
-- **Stack**: PyTorch and fastai
-- **Cloud Deployment**: Hosted on Hugging Face Spaces with auto-scaling
-- **Interactive UI**: Custom-styled Gradio app with gradient headers and adaptive theming
-- **Bilingual support**: English and Traditional Chinese localization
+- Stack: PyTorch and fastai
+- Cloud Deployment: Hosted on Hugging Face Spaces with auto-scaling
+- Interactive UI: Custom-styled Gradio app with gradient headers and adaptive theming
+- Bilingual support: English and Traditional Chinese localization
 
 ### Engineering practices
 - Clean, documented codebase with separation of concerns
@@ -124,17 +124,17 @@ graph LR
     D --> E[Custom Classifier Head]
     E --> F[Softmax Layer]
     F --> G[7-Class Probabilities]
-    
+
     style C fill:#3b82f6,stroke:#1e40af,color:#fff
     style E fill:#2dd4bf,stroke:#0d9488,color:#fff
 ```
 
 ### Model Pipeline
 
-1. **Input Processing**: Images resized and normalized using ImageNet statistics
-2. **Feature Extraction**: ResNet34 backbone extracts high-level visual features
-3. **Classification Head**: Fully connected layers adapted for 7-class output
-4. **Output**: Probability distribution across pet species
+1. Input Processing: Images resized and normalized using ImageNet statistics
+2. Feature Extraction: ResNet34 backbone extracts high-level visual features
+3. Classification Head: Fully connected layers adapted for 7-class output
+4. Output: Probability distribution across pet species
 
 ### Technology Stack
 
@@ -161,8 +161,8 @@ graph LR
 ### Key Results
 - **Achieved 98% accuracy** on held-out validation set
 - **22% improvement** over baseline through transfer learning
-- **Low overfitting**: Training and validation loss converged smoothly
-- **Confusion Matrix Analysis**: Minimal misclassification between visually similar species
+- Low overfitting: Training and validation loss converged smoothly
+- Confusion Matrix Analysis: Minimal misclassification between visually similar species
 
 > *Training performed on Google Colab with T4 GPU acceleration. Full metrics available in [pet-identifier.ipynb](pet-identifier.ipynb)*
 
@@ -172,7 +172,7 @@ graph LR
 
 ### Option 1: Try online
 
-Visit the **live demo** hosted on Hugging Face Spaces:  
+Visit the **live demo** hosted on Hugging Face Spaces:
 **[Launch application](https://huggingface.co/spaces/breznev/pet-classifier)**
 
 ### Option 2: Run Locally
@@ -214,20 +214,20 @@ pet-classifier/
 
 ### Reproducing the Model
 
-1. **Open Training Notebook**  
+1. **Open Training Notebook**
    Launch [pet-identifier.ipynb](pet-identifier.ipynb) in Jupyter/Colab
 
-2. **Dataset Preparation**  
+2. **Dataset Preparation**
    Download the "90 Different Animals" dataset and create symbolic links for 7 target species
 
-3. **Training Pipeline**  
+3. **Training Pipeline**
    ```python
    # Transfer learning with ResNet34
    learn = vision_learner(dls, resnet34, metrics=error_rate)
    learn.fine_tune(epochs=5)
    ```
 
-4. **Export Model**  
+4. **Export Model**
    ```python
    learn.export('pet_classifier_v1.pkl')
    ```
@@ -235,9 +235,9 @@ pet-classifier/
 ### Customizing the UI
 
 The Gradio interface uses custom CSS with adaptive theming. Key customization points in [app.py](app.py):
-- **Lines 26-83**: CSS styling with gradient headers
-- **Line 88-94**: Student name/ID branding
-- **Line 137-175**: Bilingual documentation accordion
+- Lines 26-83: CSS styling with gradient headers
+- Line 88-94: Student name/ID branding
+- Line 137-175: Bilingual documentation accordion
 
 ---
 
@@ -247,10 +247,10 @@ The Gradio interface uses custom CSS with adaptive theming. Key customization po
 
 The project uses **transfer learning** instead of training a CNN from scratch:
 
-1. **Pre-trained Backbone**: ResNet34 trained on ImageNet (1.4M images, 1000 classes)
-2. **Feature Reuse**: Lower layers detect universal patterns (edges, textures)
-3. **Fine-Tuning**: Only retrain final layers for pet-specific features
-4. **Result**: 98% accuracy with <30 minutes of training
+1. Pre-trained Backbone: ResNet34 trained on ImageNet (1.4M images, 1000 classes)
+2. Feature Reuse: Lower layers detect universal patterns (edges, textures)
+3. Fine-Tuning: Only retrain final layers for pet-specific features
+4. Result: 98% accuracy with <30 minutes of training
 
 ### Data Augmentation Strategy
 
@@ -269,7 +269,7 @@ graph TD
     C -->|Inference| D[ResNet34 + Custom Head]
     D -->|Predictions| E[Gradio Frontend]
     E -->|Response| A
-    
+
     style B fill:#FFD21E,stroke:#F59E0B,color:#000
     style D fill:#3b82f6,stroke:#1e40af,color:#fff
 ```
@@ -365,8 +365,8 @@ Built with [fastai](https://www.fast.ai/) • Deployed on [Hugging Face Spaces](
 
 ### 👨‍💻 開發者
 
-**馬盛中 (Ma Sheng-Zhong)** • `4B1YZ001`  
-*資訊工程系*  
+**馬盛中 (Ma Sheng-Zhong)** • `4B1YZ001`
+*資訊工程系*
 南臺科技大學 (STUST)
 
 </div>
@@ -445,7 +445,7 @@ graph LR
     D --> E[自訂分類器標頭]
     E --> F[Softmax 層]
     F --> G[7 類機率分佈]
-    
+
     style C fill:#3b82f6,stroke:#1e40af,color:#fff
     style E fill:#2dd4bf,stroke:#0d9488,color:#fff
 ```
@@ -492,7 +492,7 @@ graph LR
 
 ### 選項 1：線上試用（推薦）
 
-造訪託管於 Hugging Face Spaces 的**線上展示**：  
+造訪託管於 Hugging Face Spaces 的**線上展示**：
 👉 **[啟動應用程式](https://huggingface.co/spaces/breznev/pet-classifier)**
 
 ### 選項 2：本地執行
@@ -534,20 +534,20 @@ pet-classifier/
 
 ### 重現模型訓練
 
-1. **開啟訓練筆記本**  
+1. **開啟訓練筆記本**
    在 Jupyter 或 Colab 中開啟 [pet-identifier.ipynb](pet-identifier.ipynb)
 
-2. **準備數據集**  
+2. **準備數據集**
    下載 "90 Different Animals" 數據集，並為 7 種目標物種建立符號連結
 
-3. **訓練流程**  
+3. **訓練流程**
    ```python
    # 使用 ResNet34 進行遷移學習
    learn = vision_learner(dls, resnet34, metrics=error_rate)
    learn.fine_tune(epochs=5)
    ```
 
-4. **匯出模型**  
+4. **匯出模型**
    ```python
    learn.export('pet_classifier_v1.pkl')
    ```
@@ -589,7 +589,7 @@ graph TD
     C -->|推理預測| D[ResNet34 + 自訂分類標頭]
     D -->|預測結果| E[Gradio 前端]
     E -->|回傳回應| A
-    
+
     style B fill:#FFD21E,stroke:#F59E0B,color:#000
     style D fill:#3b82f6,stroke:#1e40af,color:#fff
 ```
