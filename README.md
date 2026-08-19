@@ -26,8 +26,8 @@ license: mit
 
 <div align="center">
 
-# 🐾 AI Pet Species Classifier
-### *Deep Learning-Powered Multi-Class Image Classification System*
+# AI Pet Species Classifier
+### Deep learning image classifier
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
@@ -36,9 +36,9 @@ license: mit
 [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-FFD21E?style=for-the-badge)](https://huggingface.co/spaces)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**[🚀 Live Demo](https://huggingface.co/spaces/breznev/pet-classifier)** • **[📓 Training Notebook](pet-identifier.ipynb)** • **[📊 Model Metrics](#-model-performance)**
+**[Live demo](https://huggingface.co/spaces/breznev/pet-classifier)** • **[📓 Training Notebook](pet-identifier.ipynb)** • **[📊 Model Metrics](#-model-performance)**
 
-*A production-ready deep learning application achieving 98% validation accuracy through transfer learning and data augmentation*
+*A Gradio application with 98% validation accuracy using transfer learning and data augmentation.*
 
 ---
 
@@ -52,24 +52,24 @@ Southern Taiwan University of Science and Technology (STUST)
 
 ---
 
-## 📋 Table of Contents
+## Table of contents
 
-- [🎯 Overview](#-overview)
-- [✨ Key Features](#-key-features)
-- [🏗️ Architecture](#️-architecture)
-- [📊 Model Performance](#-model-performance)
-- [🚀 Quick Start](#-quick-start)
-- [💻 Development](#-development)
-- [🔬 Technical Deep Dive](#-technical-deep-dive)
-- [🎓 Learning Outcomes](#-learning-outcomes)
-- [🛣️ Future Enhancements](#️-future-enhancements)
-- [📄 License](#-license)
+- [Overview](#overview)
+- [Key features](#key-features)
+- [Architecture](#architecture)
+- [Model performance](#model-performance)
+- [Quick start](#quick-start)
+- [Development](#development)
+- [Technical details](#technical-details)
+- [Learning outcomes](#learning-outcomes)
+- [Future enhancements](#future-enhancements)
+- [License](#license)
 
 ---
 
-## 🎯 Overview
+## Overview
 
-A **state-of-the-art computer vision system** that classifies 7 common household pets using deep convolutional neural networks. This project demonstrates end-to-end ML engineering—from data preprocessing to production deployment—leveraging modern MLOps best practices.
+A computer vision model that classifies seven household pet species with a convolutional neural network. The project covers data preprocessing, model training, and deployment.
 
 ### Supported Species
 
@@ -81,32 +81,32 @@ A **state-of-the-art computer vision system** that classifies 7 common household
 
 </div>
 
-### 🎬 Demo Interface
+### Demo interface
 
 The application features a **bilingual (English/Traditional Chinese)** Gradio interface with:
 - Real-time image upload and prediction
 - Top-3 confidence scores with probability distribution
 - Example gallery for quick testing
-- Responsive design with premium UI/UX
+- Responsive layout
 - Accessibility-first design approach
 
 ---
 
-## ✨ Key Features
+## Key features
 
-### 🎓 Machine Learning Excellence
+### Machine learning
 - **Transfer Learning**: Fine-tuned ResNet34 pre-trained on ImageNet
 - **98% Validation Accuracy**: Optimized through data augmentation and hyperparameter tuning
-- **Robust Generalization**: Trained on diverse animal image dataset (90 species subset)
-- **Production-Ready**: Exported as optimized `.pkl` inference model
+- **Training data**: Diverse animal image dataset (90-species subset)
+- **Inference model**: Exported as an optimized `.pkl` file
 
-### 🛠️ Technical Sophistication
-- **Modern Stack**: PyTorch + fastai for rapid prototyping
+### Technical details
+- **Stack**: PyTorch and fastai
 - **Cloud Deployment**: Hosted on Hugging Face Spaces with auto-scaling
 - **Interactive UI**: Custom-styled Gradio app with gradient headers and adaptive theming
-- **Bilingual Support**: Seamless English/Traditional Chinese localization
+- **Bilingual support**: English and Traditional Chinese localization
 
-### 🔍 Engineering Best Practices
+### Engineering practices
 - Clean, documented codebase with separation of concerns
 - Jupyter notebook for reproducible training pipeline
 - Version control with Git and `.gitignore` for ML artifacts
@@ -114,7 +114,7 @@ The application features a **bilingual (English/Traditional Chinese)** Gradio in
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 graph LR
@@ -148,14 +148,14 @@ graph LR
 
 ---
 
-## � Model Performance
+## Model performance
 
 ### Training Progression
 
 | Metric | Baseline (Pre-training) | After Data Augmentation | Final Model |
 |--------|------------------------|------------------------|-------------|
 | **Validation Accuracy** | 76% | 94% | **98%** |
-| **Training Time** | — | ~15 min | ~25 min |
+| **Training Time** | N/A | ~15 min | ~25 min |
 | **Data Augmentation** | ❌ | ✅ Random flips, rotation | ✅ + color jitter |
 
 ### Key Results
@@ -168,12 +168,12 @@ graph LR
 
 ---
 
-## 🚀 Quick Start
+## Quick start
 
-### Option 1: Try Online (Recommended)
+### Option 1: Try online
 
 Visit the **live demo** hosted on Hugging Face Spaces:  
-👉 **[Launch Application](https://huggingface.co/spaces/breznev/pet-classifier)**
+**[Launch application](https://huggingface.co/spaces/breznev/pet-classifier)**
 
 ### Option 2: Run Locally
 
@@ -198,7 +198,7 @@ Then open your browser to `http://localhost:7860`
 
 ---
 
-## 💻 Development
+## Development
 
 ### Project Structure
 
@@ -235,17 +235,17 @@ pet-classifier/
 ### Customizing the UI
 
 The Gradio interface uses custom CSS with adaptive theming. Key customization points in [app.py](app.py):
-- **Line 26-83**: Premium CSS styling with gradient headers
+- **Lines 26-83**: CSS styling with gradient headers
 - **Line 88-94**: Student name/ID branding
 - **Line 137-175**: Bilingual documentation accordion
 
 ---
 
-## 🔬 Technical Deep Dive
+## Technical details
 
 ### Why Transfer Learning?
 
-Instead of training a CNN from scratch (which requires massive datasets and compute), this project leverages **transfer learning**:
+The project uses **transfer learning** instead of training a CNN from scratch:
 
 1. **Pre-trained Backbone**: ResNet34 trained on ImageNet (1.4M images, 1000 classes)
 2. **Feature Reuse**: Lower layers detect universal patterns (edges, textures)
@@ -276,31 +276,31 @@ graph TD
 
 ---
 
-## 🎓 Learning Outcomes
+## Learning outcomes
 
 This project demonstrates proficiency in:
 
 ### Machine Learning
-- ✅ Convolutional Neural Networks (CNNs) architecture
-- ✅ Transfer learning and fine-tuning strategies
-- ✅ Data augmentation and regularization techniques
-- ✅ Model evaluation using confusion matrices
+- Convolutional Neural Networks (CNNs) architecture
+- Transfer learning and fine-tuning strategies
+- Data augmentation and regularization techniques
+- Model evaluation using confusion matrices
 
 ### Software Engineering
-- ✅ Clean, production-ready Python code
-- ✅ Git version control and dependency management
-- ✅ Full-stack ML deployment (training → inference → web UI)
-- ✅ Bilingual internationalization (i18n)
+- Documented Python code
+- Git version control and dependency management
+- Full-stack ML deployment (training → inference → web UI)
+- Bilingual internationalization (i18n)
 
 ### MLOps & Deployment
-- ✅ Model serialization and optimization
-- ✅ Cloud hosting on Hugging Face Spaces
-- ✅ Interactive UI development with Gradio
-- ✅ Documentation and reproducibility
+- Model serialization and optimization
+- Cloud hosting on Hugging Face Spaces
+- Interactive UI development with Gradio
+- Documentation and reproducibility
 
 ---
 
-## 🛣️ Future Enhancements
+## Future enhancements
 
 ### Technical Improvements
 - [ ] **Expand Dataset**: Add more species and increase training samples
@@ -321,7 +321,7 @@ This project demonstrates proficiency in:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
@@ -390,7 +390,7 @@ Built with [fastai](https://www.fast.ai/) • Deployed on [Hugging Face Spaces](
 
 ## 🎯 專案概述
 
-本專案為**先進的電腦視覺系統**，使用深度卷積神經網路 (CNN) 來分類 7 種常見的家養寵物。本專案展示了端到端的機器學習工程流程——從數據預處理到生產環境部署，並遵循現代 MLOps 的最佳實踐。
+本專案使用深度卷積神經網路 (CNN) 分類 7 種常見家養寵物，涵蓋資料預處理、模型訓練與部署。
 
 ### 支援物種
 
@@ -475,7 +475,7 @@ graph LR
 | 指標 | 基準模型 (預訓練) | 加入資料增強後 | 最終模型 |
 |--------|------------------------|------------------------|-------------|
 | **驗證準確率** | 76% | 94% | **98%** |
-| **訓練時間** | — | ~15 分鐘 | ~25 分鐘 |
+| **訓練時間** | N/A | ~15 分鐘 | ~25 分鐘 |
 | **資料增強** | ❌ | ✅ 隨機翻轉、旋轉 | ✅ + 色彩抖動 (Color Jitter) |
 
 ### 關鍵結果
@@ -601,22 +601,22 @@ graph TD
 本專案展現了在以下領域的專業能力：
 
 ### 機器學習
-- ✅ 卷積神經網路 (CNN) 架構設計
-- ✅ 遷移學習與微調策略
-- ✅ 資料增強與正規化技術
-- ✅ 利用混淆矩陣進行模型評估
+- 卷積神經網路 (CNN) 架構設計
+- 遷移學習與微調策略
+- 資料增強與正規化技術
+- 利用混淆矩陣進行模型評估
 
 ### 軟體工程
-- ✅ 乾淨且生產就緒的 Python 程式碼
-- ✅ Git 版本控制與相依性管理
-- ✅ 完整生命週期的機器學習開發流程 (訓練 → 推理 → 網頁 UI)
-- ✅ 雙語國際化 (i18n)
+- 乾淨且生產就緒的 Python 程式碼
+- Git 版本控制與相依性管理
+- 完整生命週期的機器學習開發流程 (訓練 → 推理 → 網頁 UI)
+- 雙語國際化 (i18n)
 
 ### MLOps 與部署
-- ✅ 模型序列化與優化
-- ✅ Hugging Face Spaces 雲端託管
-- ✅ 使用 Gradio 進行互動式 UI 開發
-- ✅ 專案文件建置與可重現性
+- 模型序列化與優化
+- Hugging Face Spaces 雲端託管
+- 使用 Gradio 進行互動式 UI 開發
+- 專案文件建置與可重現性
 
 ---
 
